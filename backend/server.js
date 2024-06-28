@@ -26,9 +26,6 @@ app.use(express.json());
 app.use(cookieParser()); // to parse the incoming cookies from req.cookies
 
 //routes
-app.get("/", (req, res) => {
-  res.send("Firing from Whisper Chat-App Backend");
-});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
