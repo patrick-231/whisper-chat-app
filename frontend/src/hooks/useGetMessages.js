@@ -15,14 +15,11 @@ const useGetMessages = () => {
           throw new Error("Unauthorized - No Token Provided");
         }
 
-        const res = await fetch(
-          `http://localhost:8000/api/messages/${selectedConversation._id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const res = await fetch(`/api/messages/${selectedConversation._id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = await res.json();
         if (!res.ok) {
           if (res.status === 401) {

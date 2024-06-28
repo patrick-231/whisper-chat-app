@@ -11,7 +11,7 @@ const useSendMessage = () => {
     try {
       const token = localStorage.getItem("chat-token"); // or retrieve the token from your application state
       const res = await fetch(
-        `http://localhost:8000/api/messages/send/${selectedConversation._id}`,
+        `/api/messages/send/${selectedConversation._id}`,
         {
           method: "POST",
           headers: {

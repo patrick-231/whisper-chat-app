@@ -18,7 +18,7 @@ dotenv.config();
 
 const __dirname = path.resolve();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 4000;
 
 //middleware
 app.use(cors());
