@@ -29,7 +29,9 @@ const MessageInput = () => {
           {loading ? (
             <div className="loading loading-spinner"></div>
           ) : (
-            <LuSendHorizonal />
+            <div className="ml-2 bg-sky-500 text-white p-2 rounded-md cursor-pointer">
+              <LuSendHorizonal />
+            </div>
           )}
         </button>
       </div>

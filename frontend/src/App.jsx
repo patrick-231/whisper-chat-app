@@ -7,8 +7,9 @@ import { useAuthContext } from "./context/AuthContext";
 
 function App() {
   const { authUser } = useAuthContext();
+
   return (
-    <div className="p-4 h-screen flex items-center justify-center">
+    <div className="flex flex-col md:flex-row items-center justify-center h-screen p-4">
       <Routes>
         <Route
           path="/"
@@ -19,11 +20,11 @@ function App() {
           element={authUser ? <Navigate to="/" /> : <Login />}
         />
         <Route
-          path='/signup'
+          path="/signup"
           element={authUser ? <Navigate to="/" /> : <SignUp />}
         />
       </Routes>
-      <Toaster />
+      <Toaster className="fixed bottom-4 left-4 md:bottom-auto md:left-auto md:top-4 md:right-4" />
     </div>
   );
 }

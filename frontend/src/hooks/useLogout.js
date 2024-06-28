@@ -20,6 +20,7 @@ const useLogout = () => {
 
       localStorage.removeItem("chat-user");
       setAuthUser(null);
+      toast.success("Logout successful!");
     } catch (error) {
       toast.error(error.message);
     } finally {

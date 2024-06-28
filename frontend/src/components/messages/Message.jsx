@@ -33,3 +33,35 @@ const Message = ({ message }) => {
 };
 
 export default Message;
+
+/* 
+const Message = ({ message }) => {
+  const { authUser } = useAuthContext();
+  const { selectedConversation } = useConversation();
+  const fromMe = message.senderId === authUser._id;
+  const chatClassName = fromMe ? "chat-end" : "chat-start";
+  const formattedTime = extractTime(message.createdAt);
+  const profilePic = fromMe
+    ? authUser.profilePic
+    : selectedConversation?.profilePic;
+  const bubbleBgColor = fromMe ? "bg-blue-500" : "";
+  const shakeClass = message.shouldShake ? "shake" : "";
+
+  return (
+    <div className={`chat ${chatClassName} flex flex-col items-start md:flex-row md:items-center`}>
+      <div className="chat-image avatar mr-2 mb-2 md:mb-0">
+        <div className="w-10 rounded-full">
+          <img src={profilePic} alt="Tailwind CSS chat bubble component" />
+        </div>
+      </div>
+      <div
+        className={`chat-bubble text-white ${bubbleBgColor} ${shakeClass} pb-2 max-w-[70%] md:max-w-none`}
+      >
+        {message.message}
+      </div>
+      <div className={"chat-footer opacity-50 text-xs flex gap-1 items-center"}>
+        <span className="block md:inline">{formattedTime}</span>
+      </div>
+    </div>
+  );
+}; */
